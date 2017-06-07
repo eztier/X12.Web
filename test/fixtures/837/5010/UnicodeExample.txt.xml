@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<Interchange segment-terminator="~" element-separator="*" sub-element-separator=":">
+  <ISA>
+    <!--Author Information Qualifier-->
+    <ISA01>00<!--No Authorization Information Present--></ISA01>
+    <!--Author Information-->
+    <ISA02>          </ISA02>
+    <!--Security Information Qualifer-->
+    <ISA03>01<!--Password--></ISA03>
+    <!--Security Information-->
+    <ISA04>CYCTRANS  </ISA04>
+    <!--Interchange ID Qualifier-->
+    <ISA05>ZZ<!--Mutually Defined--></ISA05>
+    <!--Interchange Sender ID-->
+    <ISA06>t393447        </ISA06>
+    <!--Interchange ID Qualifier-->
+    <ISA07>ZZ<!--Mutually Defined--></ISA07>
+    <!--Interchange Receiver ID-->
+    <ISA08>CLAIMSCH       </ISA08>
+    <!--Interchange Date-->
+    <ISA09>120521</ISA09>
+    <!--Interchange Time-->
+    <ISA10>0812</ISA10>
+    <!--Inter Control Standards Identifier-->
+    <ISA11>^</ISA11>
+    <!--Inter Control Version Number-->
+    <ISA12>00501</ISA12>
+    <!--Inter Control Number-->
+    <ISA13>001151933</ISA13>
+    <!--Acknowlegment Requested-->
+    <ISA14>1<!--Interchange Acknowledgment Requested--></ISA14>
+    <!--Usage Indicator-->
+    <ISA15>P<!--Production Data--></ISA15>
+    <!--Component Element Separator-->
+    <ISA16>
+      <ISA1601 />
+      <ISA1602 />
+    </ISA16>
+  </ISA>
+  <FunctionGroup>
+    <GS>
+      <!--Functional Identifier Code-->
+      <GS01>HC<!--Health Care Claim (837)--></GS01>
+      <!--Application Sender's Code-->
+      <GS02>t393447</GS02>
+      <!--Application Receiver's Code-->
+      <GS03>ECGCLAIMS</GS03>
+      <!--Date-->
+      <GS04>20120521</GS04>
+      <!--Time-->
+      <GS05>081203</GS05>
+      <!--Group Control Number-->
+      <GS06>1151933</GS06>
+      <!--Responsible Agency Code-->
+      <GS07>X<!--Accredited Standards Committee X12--></GS07>
+      <!--Version / Release / Industry Identifier Code-->
+      <GS08>005010X222A1</GS08>
+    </GS>
+    <Transaction ControlNumber="000000001">
+      <ST>
+        <!--Transaction Set Identifier Code-->
+        <ST01>837<!--Health Care Claim--></ST01>
+        <!--Transaction Set Control Number-->
+        <ST02>000000001</ST02>
+        <!--Implementation Convention Reference-->
+        <ST03>005010X222A1</ST03>
+      </ST>
+      <BHT>
+        <!--Hierarchical Structure Code-->
+        <BHT01>0019<!--Information Source, Subscriber, Dependent--></BHT01>
+        <!--Transaction Set Purpose Code-->
+        <BHT02>00<!--Original--></BHT02>
+        <!--Reference Identification-->
+        <BHT03>1151933</BHT03>
+        <!--Date-->
+        <BHT04>20120521</BHT04>
+        <!--Time-->
+        <BHT05>081203</BHT05>
+        <!--Transaction Type Code-->
+        <BHT06>CH<!--Chargeable--></BHT06>
+      </BHT>
+      <Loop LoopId="1000A" Name="SUBMITTER NAME">
+        <NM1>
+          <!--Entity Identifier Code-->
+          <NM101>41<!--Submitter--></NM101>
+        </NM1>
+      </Loop>
+    </Transaction>
+  </FunctionGroup>
+</Interchange>

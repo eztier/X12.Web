@@ -1,0 +1,7 @@
+packages/
+*.suo
+*.user
+**/bin
+**/obj
+Test.cs
+packages*/
