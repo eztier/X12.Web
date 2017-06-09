@@ -1,0 +1,15 @@
+﻿<Properties StartupItem="Server/X12.Web.Server.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Server/Start.cs">
+    <Files>
+      <File FileName="src/Hippa/TransformToX12.cs" Line="19" Column="8" />
+      <File FileName="Server/Start.cs" Line="36" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/home/htao/X12.Web/Server/Start.cs" line="17" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

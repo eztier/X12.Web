@@ -7,7 +7,7 @@ using System.ServiceModel.Activation;
 using System.ServiceModel.Web;
 using System.Web;
 
-namespace X12.Web {
+namespace X12.Web.Server {
   class Start {
     static void Main(string[] args) {
 
