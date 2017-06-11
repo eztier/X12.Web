@@ -50,6 +50,7 @@
     <Compile Include="src\Hippa\Contract.cs" />
     <Compile Include="src\Hippa\IHippa.cs" />
     <Compile Include="src\Hippa\TransformToX12.cs" />
+    <Compile Include="src\Hippa\Util.cs" />
     <Compile Include="src\Hippa\X12Parser.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
