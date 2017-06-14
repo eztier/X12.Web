@@ -5,6 +5,7 @@ using System.IO;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Xml;
 using OopFactory.X12.Parsing;
 
 namespace X12.Web {
@@ -17,12 +18,12 @@ namespace X12.Web {
       StreamWriter writer = new StreamWriter(stream, encoding);
 
       var interchanges = parser.ParseMultiple(input, encoding);
-      writer.Write(encoding.GetBytes("<Interchanges>"));
+      writer.Write("<Interchanges>");
       for (int i = 0; i < interchanges.Count; i++) {
         var interchange = interchanges[i].Serialize();
-        writer.Write(encoding.GetBytes(interchange));
+        writer.Write(interchange.RemoveXmlDeclaration());
       }
-      writer.Write(encoding.GetBytes("</Interchanges>"));
+      writer.Write("</Interchanges>");
       writer.Flush();
 
       stream.Position = 0;
@@ -34,7 +35,7 @@ namespace X12.Web {
       Stream stream = new MemoryStream();
       StreamWriter writer = new StreamWriter(stream, encoding);
 
-      writer.Write(encoding.GetBytes("<Interchanges>"));
+      writer.Write("<Interchanges>");
       // Break up output files by batch size
       X12StreamReader reader = new X12StreamReader(stream, encoding);
       X12FlatTransaction currentTransactions = reader.ReadNextTransaction();
@@ -47,16 +48,16 @@ namespace X12.Web {
           currentTransactions.Transactions.AddRange(nextTransaction.Transactions);
         } else {
           var interchange = parser.ParseMultiple(currentTransactions.ToString()).First().Serialize();
-          writer.Write(encoding.GetBytes(interchange));
+          writer.Write(interchange.RemoveXmlDeclaration());
           currentTransactions = nextTransaction;
         }
         nextTransaction = reader.ReadNextTransaction();
       }
 
       var finalInterchange = parser.ParseMultiple(currentTransactions.ToString()).First().Serialize();
-      writer.Write(encoding.GetBytes(finalInterchange));
+      writer.Write(finalInterchange.RemoveXmlDeclaration());
 
-      writer.Write(encoding.GetBytes("</Interchanges>"));
+      writer.Write("</Interchanges>");
       writer.Flush();
 
       stream.Position = 0;

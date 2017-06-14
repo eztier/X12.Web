@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
+using System.Xml;
 
 namespace X12.Web {
   static internal class Util {
@@ -13,6 +15,33 @@ namespace X12.Web {
 
       ret.Position = 0;
       return ret;
+    }
+
+    public static string AsString(this XmlDocument xmlDoc) {
+      using (StringWriter sw = new StringWriter()) {
+        using (XmlTextWriter tx = new XmlTextWriter(sw)) {
+          xmlDoc.WriteTo(tx);
+          string strXmlText = sw.ToString();
+          return strXmlText;
+        }
+      }
+    }
+
+    public static string RemoveXmlDeclaration(this string xmlString) {
+      var xml = new XmlDocument();
+
+      try {
+        xml.LoadXml(xmlString);
+
+        if (xml.FirstChild.NodeType == XmlNodeType.XmlDeclaration) {
+          xml.RemoveChild(xml.FirstChild);
+        }
+
+        return xml.AsString();
+      } catch (Exception e) {
+        // no op
+      }
+      return "";
     }
   }
 }
