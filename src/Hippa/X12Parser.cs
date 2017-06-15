@@ -5,7 +5,6 @@ using System.IO;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
-using System.Xml;
 using OopFactory.X12.Parsing;
 
 namespace X12.Web {
