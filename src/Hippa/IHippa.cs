@@ -21,5 +21,13 @@ namespace X12.Web {
       ResponseFormat = WebMessageFormat.Xml,
       UriTemplate = "transform/x12/xml")]
     Stream X12Parser(Stream postData);
+
+    [OperationContract]
+    [WebInvoke(Method = "POST",
+      BodyStyle = WebMessageBodyStyle.Bare,
+      RequestFormat = WebMessageFormat.Xml,
+      ResponseFormat = WebMessageFormat.Xml,
+      UriTemplate = "claims/transform/837/xml")]
+    Stream Transform837ToClaimDocument(Stream postData);
   }
 }

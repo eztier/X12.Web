@@ -33,6 +33,9 @@
     <Reference Include="OopFactory.X12">
       <HintPath>packages\OopFactory.X12.3.0.8.1\lib\net40\OopFactory.X12.dll</HintPath>
     </Reference>
+    <Reference Include="OopFactory.X12.Hipaa">
+      <HintPath>vendor\OopFactory.X12.Hipaa.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -47,13 +50,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="src\Hippa\Claims\TransformToInstitutionalClaim4010.cs" />
-    <Compile Include="src\Hippa\Contract.cs" />
+    <Compile Include="src\Hippa\Claims\Transform837ToClaimDocument.cs" />
+    <Compile Include="src\Hippa\Support\Contract.cs" />
     <Compile Include="src\Hippa\IHippa.cs" />
-    <Compile Include="src\Hippa\TransformToX12.cs" />
-    <Compile Include="src\Hippa\Util.cs" />
-    <Compile Include="src\Hippa\X12Parser.cs" />
+    <Compile Include="src\Hippa\Core\TransformToX12.cs" />
+    <Compile Include="src\Hippa\Support\Util.cs" />
+    <Compile Include="src\Hippa\Core\X12Parser.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

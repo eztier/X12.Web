@@ -11,7 +11,7 @@ using OopFactory.X12.Hipaa.Claims.Services;
 namespace X12.Web {
   public partial class Hippa : IHippa {
 
-    public Stream TransformToInstitutionalClaim4010(Stream input) {
+    public Stream Transform837ToClaimDocument(Stream input) {
       var service = new ClaimTransformationService();
       var document = service.Transform837ToClaimDocument(input);      
       string xml = document.Serialize();
