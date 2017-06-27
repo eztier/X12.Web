@@ -30,11 +30,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="OopFactory.X12">
-      <HintPath>packages\OopFactory.X12.3.0.8.1\lib\net40\OopFactory.X12.dll</HintPath>
+    <Reference Include="OopFactory.X12, Version=3.0.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>vendor\OopFactory.X12.dll</HintPath>
     </Reference>
     <Reference Include="OopFactory.X12.Hipaa">
       <HintPath>vendor\OopFactory.X12.Hipaa.dll</HintPath>
+    </Reference>
+    <Reference Include="OopFactory.X12.Validation">
+      <HintPath>vendor\OopFactory.X12.Validation.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -57,7 +61,9 @@
     <Compile Include="src\Hippa\Support\Util.cs" />
     <Compile Include="src\Hippa\Core\X12Parser.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
